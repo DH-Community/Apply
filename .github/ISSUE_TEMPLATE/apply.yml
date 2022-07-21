@@ -2,6 +2,8 @@ name: Application Form
 description: Fill out this application form to apply for membership
 assignees:
   - rdp-studio
+labels:
+  - application
 body:
   - type: markdown
     attributes:
@@ -15,7 +17,7 @@ body:
       placeholder: ex. rdp-studio
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: why
     attributes:
       label: Why do you want to join this community
@@ -23,6 +25,25 @@ body:
       placeholder: ex. Learn and share my development experience
     validations:
       required: true
+  - type: checkboxes
+    id: languages
+    attributes:
+      label: Programming languages / tools / frameworks you are good at
+      description: |
+        Choose the programming language / tool / framework you are good at, and we will recommend the team you should be interested in.
+      options:
+        - label: Python
+          required: false
+        - label: PHP
+          required: false
+        - label: Golang
+          required: false
+        - label: JavaScript / Node.JS
+          required: false
+        - label: HTML / CSS
+          required: false
+        - label: Vue / Vite
+          required: false
   - type: checkboxes
     id: checkagain
     attributes:
