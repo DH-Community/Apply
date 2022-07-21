@@ -1,0 +1,21 @@
+name: Auto Comment
+on: [issues]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpenedReactions: 'heart, +1'
+          issuesOpenedComment: |
+            👋 @{{ author }}
+            Thank you for your application! We will try our best to review your application as soon as possible. Thank you again for your application.
+          issuesClosedReactions: 'hooray. +1'
+          issuesClosedComment: |
+            👋 @{{ author }}
+            Congratulations! Your application has passed. We will send you the invitation as soon as possible.
+          issuesLockedReactions: 'confused, -1'
+          issuesLockedComment: |
+            👋 @{{ author }}
+            Sorry to inform you that your application has been rejected. Please check your application again and resubmit. We look forward to your formal participation.
